@@ -19,7 +19,7 @@ setup(
 
     install_requires=[
         'Flask',
-        'git+https://github.com/yt-dlp/yt-dlp.git',
+        'yt-dlp',
     ],
 
     classifiers=[

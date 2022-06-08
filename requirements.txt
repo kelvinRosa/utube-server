@@ -1,4 +1,4 @@
-git+https://github.com/yt-dlp/yt-dlp.git
+yt-dlp
 flask
 Flask-Limiter
 gunicorn
