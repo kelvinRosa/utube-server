@@ -3,13 +3,13 @@
 from setuptools import setup
 
 setup(
-    name='utube_server',
-    version='0.4',
-    description='Api server to work with utube',
-    long_description='Used with youtube unity plugin',
-    author='KRosa',
-    author_email='aventurasmiudas@gmail.com',
-    url='https://github.com/kelvinRosa/utube-server',
+    name='youtube_dl_server',
+    version='0.3',
+    description='An API server based on youtube_dl',
+    long_description='Get the videos from different sites using a server running youtube_dl',
+    author='Jaime Marquínez Ferrándiz',
+    author_email='jaime.marquinez.ferrandiz@gmail.com',
+    url='https://github.com/jaimeMF/youtube-dl-api-server',
     packages=['youtube_dl_server'],
     entry_points={
         'console_scripts': [
@@ -20,7 +20,6 @@ setup(
     install_requires=[
         'Flask',
         'git+https://github.com/yt-dlp/yt-dlp.git',
-        'pycryptodomex',
     ],
 
     classifiers=[
