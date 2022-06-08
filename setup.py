@@ -9,7 +9,7 @@ setup(
     long_description='Used with youtube unity plugin',
     author='KRosa',
     author_email='aventurasmiudas@gmail.com',
-    url='',
+    url='https://github.com/kelvinRosa/utube-server',
     packages=['youtube_dl_server'],
     entry_points={
         'console_scripts': [
