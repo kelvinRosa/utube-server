@@ -1,0 +1,9 @@
+{
+    "patterns": [
+    "(?:\b|[^\w$])([\w$]{2})\s*=\s*function\(\s*a\s*\)\s*{\s*a\s*=\s*a\.split\(\s*\"\"\"\"\s*\)",
+    "(\w+)=function\(\w+\){(\w+)=\2\.split\(\x22{2}\);.*?return\s+\2\.join\(\x22{2}\)}",
+    "\b[cs]\s*&&\s*[adf]\.set\([^,]+\s*,\s*encodeURIComponent\s*\(\s*([\w$]+)\("
+  ],
+  "htmlJson": "ytplayer\.config\s*=\s*(\{.+?\});ytplayer",
+  "htmlPlayerVersion": "player_ias-(.+?).js",
+}

@@ -1,0 +1,5 @@
+git+https://github.com/yt-dlp/yt-dlp.git
+flask
+Flask-Limiter
+gunicorn
+pycryptodomex
