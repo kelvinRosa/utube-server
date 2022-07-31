@@ -8,7 +8,7 @@ from flask import Flask, Blueprint, current_app, jsonify, request, redirect, abo
 #from flask_limiter.util import get_remote_address
 import yt_dlp
 from yt_dlp.version import __version__ as youtube_dl_version
-
+import yt_dlp.utils
 
 from .version import __version__
 
@@ -28,7 +28,7 @@ def get_videos(url, extra_params):
     '''
     Get a list with dict for every video founded
     '''
-
+    youtube_dl.utils.std_headers['User-Agent'] = ''
     ydl_params = {
         'extractor_args': 'youtube:player_client=web',
         'no_cache_dir': True,
@@ -43,7 +43,6 @@ def get_videos(url, extra_params):
     ydl_params.update(extra_params)
     ydl_opts = {
     'format': '313',
-    'add_header': "User-Agent: ",
     'extractor_args': 'youtube:player_client=web',
     'player_client': 'web',
     }
