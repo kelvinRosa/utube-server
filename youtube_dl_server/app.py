@@ -9,7 +9,7 @@ from flask import Flask, Blueprint, current_app, jsonify, request, redirect, abo
 import yt_dlp
 from yt_dlp.version import __version__ as youtube_dl_version
 import yt_dlp.utils
-youtube_dl.utils.std_headers['User-Agent'] = ''
+
 
 from .version import __version__
 
@@ -22,6 +22,7 @@ if not hasattr(sys.stderr, 'isatty'):
 class SimpleYDL(yt_dlp.YoutubeDL):
     def __init__(self, *args, **kargs):
         super(SimpleYDL, self).__init__(*args, **kargs)
+        youtube_dl.utils.std_headers['User-Agent'] = ''
         self.add_default_info_extractors()
 
 
