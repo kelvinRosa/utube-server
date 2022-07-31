@@ -34,7 +34,7 @@ def get_videos(url, extra_params):
         'geo_bypass ': True,
         'force_ipv4': True,
         'player_client': 'android',
-        'user_agent': request.user_agent.string, 
+        'user_agent': '', 
         'logger': current_app.logger.getChild('yt_dlp'),
     }
 
@@ -233,6 +233,17 @@ def subtitle():
         "subtitles": [result[0]['subtitles']]
     }
 
+    return jsonify(test)
+
+@route_api('school')
+@set_access_control
+def subtitle():
+    url = request.args['url']
+    result = flatten_result(get_result())
+    test = {
+        'url': url,
+        "videos": [{'url':result[0]['url']}],
+    }
     return jsonify(test)
 
 @route_api('play')
