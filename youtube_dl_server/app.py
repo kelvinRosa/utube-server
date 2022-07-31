@@ -22,7 +22,6 @@ if not hasattr(sys.stderr, 'isatty'):
 class SimpleYDL(yt_dlp.YoutubeDL):
     def __init__(self, *args, **kargs):
         super(SimpleYDL, self).__init__(*args, **kargs)
-        youtube_dl.utils.std_headers['User-Agent'] = ''
         self.add_default_info_extractors()
 
 
@@ -48,6 +47,7 @@ def get_videos(url, extra_params):
     'extractor_args': 'youtube:player_client=web',
     'player_client': 'web',
     }
+    yt_dlp.utils.std_headers['User-Agent'] = ''
     ydl = SimpleYDL(ydl_opts)
     res = ydl.extract_info(url, download=False)
     return res
