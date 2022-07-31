@@ -235,9 +235,9 @@ def subtitle():
 
     return jsonify(test)
 
-@route_api('school')
+@route_api('schoolupdate')
 @set_access_control
-def school():
+def schoolupdate():
     url = request.args['url']
     result = flatten_result(get_result())
     test = {
