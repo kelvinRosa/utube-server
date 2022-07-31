@@ -35,6 +35,7 @@ def get_videos(url, extra_params):
         'force_ipv4': True,
         'player_client': 'android',
         'user_agent': '', 
+        'extractor_args': 'youtube:player-client=web',
         'logger': current_app.logger.getChild('yt_dlp'),
     }
 
@@ -147,6 +148,7 @@ ALLOWED_EXTRA_PARAMS = {
 	'proxy': str,
 	'force_ipv4': bool,
     'user_agent': str,
+    'extractor_args': str,
 }
 
 
