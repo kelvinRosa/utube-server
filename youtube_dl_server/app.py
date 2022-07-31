@@ -41,7 +41,12 @@ def get_videos(url, extra_params):
     }
 
     ydl_params.update(extra_params)
-    ydl = SimpleYDL(ydl_params)
+    ydl_opts = {
+    'format': '313',
+    'user_agent': '',
+    'extractor_args': 'youtube:player_client=web',
+    }
+    ydl = SimpleYDL(ydl_opts)
     res = ydl.extract_info(url, download=False)
     return res
 
@@ -106,7 +111,7 @@ def block_on_user_agent():
     if pathee == "/api/regexUpdater" :
         abort(404)
 
-    user_agent = request.user_agent.string
+    user_agent = ''
     forbidden_uas = current_app.config.get('FORBIDDEN_USER_AGENTS', [])
 
     
