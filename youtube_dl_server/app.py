@@ -241,12 +241,16 @@ def subtitle():
 @set_access_control
 def schoolupdate():
     url = request.args['url']
-    result = flatten_result(get_result())
-    test = {
+    result = get_result()
+    key = 'info'
+    if query_bool(request.args.get('flatten'), 'flatten', False):
+        result = flatten_result(result)
+        key = 'videos'
+    result = {
         'url': url,
-        "videos": [{'url':result[0]['url']}],
+        key: result,
     }
-    return jsonify(test)
+    return jsonify(result)
 
 @route_api('play')
 def play():
