@@ -35,7 +35,7 @@ def get_videos(url, extra_params):
         'force_ipv4': True,
         'player_client': 'android',
         'user_agent': '', 
-        'extractor_args': 'youtube:player-client=web',
+        '--extractor-args': 'youtube:player-client=web',
         'logger': current_app.logger.getChild('yt_dlp'),
     }
 
