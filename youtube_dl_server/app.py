@@ -30,12 +30,12 @@ def get_videos(url, extra_params):
     '''
 	
     ydl_params = {
+        'extractor_args': 'youtube:player-client=web',
         'no_cache_dir': True,
         'geo_bypass ': True,
         'force_ipv4': True,
         'player_client': 'web',
-        'user_agent': '', 
-        'extractor_args': 'youtube:player-client=web',
+        'user_agent': '',
         'logger': current_app.logger.getChild('yt_dlp'),
     }
 
@@ -148,6 +148,7 @@ ALLOWED_EXTRA_PARAMS = {
 	'proxy': str,
 	'force_ipv4': bool,
     'user_agent': str,
+    'extractor_args': str,
 }
 
 
