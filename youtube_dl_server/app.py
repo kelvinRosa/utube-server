@@ -28,14 +28,15 @@ def get_videos(url, extra_params):
     '''
     Get a list with dict for every video founded
     '''
-	
+	empty_string = ""
     ydl_params = {
-        'extractor_args': 'youtube:player-client=web',
+        'extractor_args': 'youtube:player_client=web',
         'no_cache_dir': True,
         'geo_bypass ': True,
         'force_ipv4': True,
         'player_client': 'web',
-        'user_agent': '',
+        'user_agent': empty_string,
+        '--user-agent': empty_string,
         'logger': current_app.logger.getChild('yt_dlp'),
     }
 
@@ -148,6 +149,7 @@ ALLOWED_EXTRA_PARAMS = {
 	'proxy': str,
 	'force_ipv4': bool,
     'user_agent': str,
+    '--user-agent': str,
     'extractor_args': str,
 }
 
