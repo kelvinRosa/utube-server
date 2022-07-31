@@ -43,7 +43,7 @@ def get_videos(url, extra_params):
     ydl_params.update(extra_params)
     ydl_opts = {
     'format': '313',
-    'user_agent': "",
+    'add_header': "User-Agent: ",
     'extractor_args': 'youtube:player_client=web',
     'player_client': 'web',
     }
