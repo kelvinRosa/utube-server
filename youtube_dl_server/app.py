@@ -237,7 +237,7 @@ def subtitle():
 
 @route_api('school')
 @set_access_control
-def subtitle():
+def school():
     url = request.args['url']
     result = flatten_result(get_result())
     test = {
