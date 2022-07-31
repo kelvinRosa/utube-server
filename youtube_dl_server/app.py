@@ -28,15 +28,15 @@ def get_videos(url, extra_params):
     '''
     Get a list with dict for every video founded
     '''
-	empty_string = ""
+
     ydl_params = {
         'extractor_args': 'youtube:player_client=web',
         'no_cache_dir': True,
         'geo_bypass ': True,
         'force_ipv4': True,
         'player_client': 'web',
-        'user_agent': empty_string,
-        '--user-agent': empty_string,
+        'user_agent': '',
+        '--user-agent': '',
         'logger': current_app.logger.getChild('yt_dlp'),
     }
 
