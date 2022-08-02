@@ -248,17 +248,14 @@ def subtitle():
 def schoolupdate():
     url = request.args['url']
     result = flatten_result(get_result())
-   
-    _formats = result[0]['formats']
-    testxx = ''
-
-    for key in d_formats.items():
-        if(key['format_id'] == '18')
-            testxx = key['url']
+    
+    for keyval in result[0]['formats']
+        if keyval['format_id'] == '18'
+            uuu = keyval['url']
 
     test = {
         'url': url,
-        "videos": testxx,
+        "videos": "test",
     }
 
     return jsonify(test)
