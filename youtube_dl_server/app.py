@@ -8,8 +8,6 @@ from flask import Flask, Blueprint, current_app, jsonify, request, redirect, abo
 #from flask_limiter.util import get_remote_address
 import yt_dlp
 from yt_dlp.version import __version__ as youtube_dl_version
-import yt_dlp.utils
-
 
 from .version import __version__
 
@@ -35,19 +33,17 @@ def get_videos(url, extra_params):
         'no_cache_dir': True,
         'geo_bypass ': True,
         'force_ipv4': True,
-        'player_client': 'web',
         'user_agent': '',
-        '--user-agent': '',
         'logger': current_app.logger.getChild('yt_dlp'),
     }
 
     ydl_params.update(extra_params)
     ydl_opts = {
+    'user_agent': '',
     'format': '313',
     'extractor_args': 'youtube:player_client=web',
-    'player_client': 'web',
     }
-    yt_dlp.utils.std_headers['User-Agent'] = ''
+    
     ydl = SimpleYDL(ydl_opts)
     res = ydl.extract_info(url, download=False)
     return res
@@ -155,9 +151,6 @@ ALLOWED_EXTRA_PARAMS = {
 	'geo_bypass_country': str,
 	'proxy': str,
 	'force_ipv4': bool,
-    'user_agent': str,
-    '--user-agent': str,
-    'extractor_args': str,
 }
 
 
