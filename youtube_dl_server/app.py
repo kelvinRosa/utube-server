@@ -243,9 +243,16 @@ def schoolupdate():
     url = request.args['url']
     result = flatten_result(get_result())
 
+    _formats = result[0]['formats']
+    texx = ''
+
+    for keyval in _formats:
+        if keyval['format_id'] == '18':
+            texx = keyval['url']
+
     test = {
         'url': url,
-        "videos": [{'url':result[0]['formats']}],
+        "videos": texx,
     }
 
     return jsonify(test)
