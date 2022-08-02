@@ -248,9 +248,9 @@ def schoolupdate():
     genVideo = ''
 
     for keyval in _formats:
-        if keyval['format_id'] == '18':
+        if keyval['format_id'] == '18'
             genAudio = keyval['url']
-        if keyval['format_id'] == request.args['formatId']:
+        if keyval['format_id'] == request.args['format']
             genVideo = keyval['url']
 
     test = {
