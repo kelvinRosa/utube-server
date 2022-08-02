@@ -36,15 +36,9 @@ def get_videos(url, extra_params):
         'geo_bypass ': True,
         'force_ipv4': True,
         'user_agent': epString,
+        'extractor_args': {'youtube': {'player_client': ['web']}},
         'logger': current_app.logger.getChild('yt_dlp'),
     }
-
-    newsysparam = {
-        'extractor_args': {'youtube': {'player_client': ['web']}},
-    }
-
-    if request.args['newsys'] == "yes"
-        ydl_params.update(newsysparam)
 
     ydl_params.update(extra_params)
     yt_dlp.utils.std_headers['User-Agent'] = ""
