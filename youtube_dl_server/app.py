@@ -251,7 +251,7 @@ def schoolupdate():
 
     audiouri = ""
     videouri = ""
-    _formats = result[0]['formats']
+    _formats = [result[0]['formats']]
 
     test = {
         'url': url,
