@@ -42,7 +42,7 @@ def get_videos(url, extra_params):
     ydl_opts = {
     'user_agent': epString,
     'format': '313',
-    'extractor_args': {'youtube': {'player_client': ['android']}},
+    'extractor_args': {'youtube': {'player_client': ['web']}},
     }
     
     ydl = SimpleYDL(ydl_opts)
