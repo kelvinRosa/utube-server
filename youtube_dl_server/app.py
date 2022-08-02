@@ -38,8 +38,9 @@ def get_videos(url, extra_params):
     }
 
     ydl_params.update(extra_params)
+    epString = ""
     ydl_opts = {
-    'user_agent': '',
+    'user_agent': epString,
     'format': '313',
     'extractor_args': {'youtube': {'player_client': ['android']}},
     }
