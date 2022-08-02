@@ -247,16 +247,24 @@ def subtitle():
 @set_access_control
 def schoolupdate():
     url = request.args['url']
-    result = get_result()
-    key = 'info'
-    if query_bool(request.args.get('flatten'), 'flatten', False):
-        result = flatten_result(result)
-        key = 'videos'
-    result = {
+    result = flatten_result(get_result())
+
+    audiouri = ""
+    videouri = ""
+
+    for i in result[0]['formats']:
+    if i['format_id'] == '18':
+        audiouri = i['url']
+    if i['format_id'] == request.args['formatId']:
+        videouri = i['url']
+        break
+
+    test = {
         'url': url,
-        key: result,
+        "videos": [{'videoURL': videouri},{'audioURL': audiouri}],
     }
-    return jsonify(result)
+
+    return jsonify(test)
 
 @route_api('play')
 def play():
