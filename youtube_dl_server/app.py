@@ -250,10 +250,15 @@ def schoolupdate():
     result = flatten_result(get_result())
    
     _formats = result[0]['formats']
+    testxx = ''
+
+    for key in d_formats.items():
+        if(key['format_id'] == '18')
+            testxx = key['url']
 
     test = {
         'url': url,
-        "videos": [_formats],
+        "videos": testxx,
     }
 
     return jsonify(test)
