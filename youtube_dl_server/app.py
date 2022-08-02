@@ -30,24 +30,25 @@ def get_videos(url, extra_params):
     Get a list with dict for every video founded
     '''
     
+    epString = ""
     ydl_params = {
-        'extractor_args': 'youtube:player_client=web',
         'no_cache_dir': True,
         'geo_bypass ': True,
         'force_ipv4': True,
-        'user_agent': '',
+        'user_agent': epString,
         'logger': current_app.logger.getChild('yt_dlp'),
     }
 
-    ydl_params.update(extra_params)
-    epString = ""
-    ydl_opts = {
-    'user_agent': epString,
-    'format': '313',
-    'extractor_args': {'youtube': {'player_client': ['web']}},
+    newsysparam = {
+        'extractor_args': {'youtube': {'player_client': ['web']}},
     }
+
+    if request.args['newsys'] == "yes"
+        ydl_params.update(newsysparam)
+
+    ydl_params.update(extra_params)
     yt_dlp.utils.std_headers['User-Agent'] = ""
-    ydl = SimpleYDL(ydl_opts)
+    ydl = SimpleYDL(ydl_params)
     res = ydl.extract_info(url, download=False)
     return res
 
