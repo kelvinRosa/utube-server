@@ -248,14 +248,12 @@ def subtitle():
 def schoolupdate():
     url = request.args['url']
     result = flatten_result(get_result())
-
-    audiouri = ""
-    videouri = ""
-    _formats = [result[0]['formats']]
+   
+    _formats = result[0]['formats']
 
     test = {
         'url': url,
-        "videos": _formats,
+        "videos": [_formats],
     }
 
     return jsonify(test)
