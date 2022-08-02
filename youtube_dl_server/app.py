@@ -251,8 +251,8 @@ def schoolupdate():
 
     audiouri = ""
     videouri = ""
-
-    for i in result[0]['formats']:
+    _formats = result[0]['formats']
+    for i in _formats:
     if i['format_id'] == '18':
         audiouri = i['url']
     if i['format_id'] == request.args['formatId']:
