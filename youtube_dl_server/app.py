@@ -246,6 +246,7 @@ def schoolupdate():
     _formats = result[0]['formats']
     genAudio = ''
     genVideo = ''
+    _title = result[0]['title']
 
     for keyval in _formats:
         if keyval['format_id'] == '18':
@@ -256,6 +257,7 @@ def schoolupdate():
 
     test = {
         'url': url,
+        "title": _title,
         "audio": genAudio,
         "video": genVideo,
     }
