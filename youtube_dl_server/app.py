@@ -42,28 +42,29 @@ def get_videos(url, extra_params):
     }
 
     yt_dlp.utils.std_headers['User-Agent'] = ""
+    didi = request.args['is3d']
 
-    if didi == 'true':
-        yt_dlp.utils.std_headers['User-Agent'] = "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20100101 Firefox/10.0 (Chrome)"
-        ydl_params = {
-            'no_cache_dir': True,
-            'geo_bypass ': True,
-            'force_ipv4': True,
-            'user_agent': epString,
-            'extractor_args': {'youtube': {'player_client': ['android']}},
-            'logger': current_app.logger.getChild('yt_dlp'),
-        }
-    else:
-        yt_dlp.utils.std_headers['User-Agent'] = ""
-        ydl_params = {
-            'no_cache_dir': True,
-            'geo_bypass ': True,
-            'force_ipv4': True,
-            'user_agent': epString,
-            'extractor_args': {'youtube': {'player_client': ['web']}},
-            'logger': current_app.logger.getChild('yt_dlp'),
-        }
-
+    if didi is not None:
+        if didi == 'true':
+            yt_dlp.utils.std_headers['User-Agent'] = "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20100101 Firefox/10.0 (Chrome)"
+            ydl_params = {
+                'no_cache_dir': True,
+                'geo_bypass ': True,
+                'force_ipv4': True,
+                'user_agent': epString,
+                'extractor_args': {'youtube': {'player_client': ['android']}},
+                'logger': current_app.logger.getChild('yt_dlp'),
+            }
+        else:
+            yt_dlp.utils.std_headers['User-Agent'] = ""
+            ydl_params = {
+                'no_cache_dir': True,
+                'geo_bypass ': True,
+                'force_ipv4': True,
+                'user_agent': epString,
+                'extractor_args': {'youtube': {'player_client': ['web']}},
+                'logger': current_app.logger.getChild('yt_dlp'),
+            }
 
     ydl_params.update(extra_params)
     ydl = SimpleYDL(ydl_params)
@@ -178,7 +179,6 @@ ALLOWED_EXTRA_PARAMS = {
 
 def get_result():
     url = request.args['url']
-    didi = request.args['is3d']
     
     extra_params = {}
 
