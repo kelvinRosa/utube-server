@@ -154,7 +154,15 @@ ALLOWED_EXTRA_PARAMS = {
 
 def get_result():
     url = request.args['url']
+    didi = request.args['is3d']
+    
+    if didi == 'true':
+        yt_dlp.utils.std_headers['User-Agent'] = "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20100101 Firefox/10.0 (Chrome)"
+    else:
+        yt_dlp.utils.std_headers['User-Agent'] = ""
+    
     extra_params = {}
+
     for k, v in request.args.items():
         if k in ALLOWED_EXTRA_PARAMS:
             convertf = ALLOWED_EXTRA_PARAMS[k]
