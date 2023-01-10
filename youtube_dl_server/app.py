@@ -259,7 +259,7 @@ def schoolupdate():
         'url': url,
         "title": _title,
         "audio": genAudio,
-        "video": genVideo,
+        "video": result[0]['url'],
     }
 
     return jsonify(test)
