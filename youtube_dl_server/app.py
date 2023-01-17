@@ -9,7 +9,7 @@ from flask import Flask, Blueprint, current_app, jsonify, request, redirect, abo
 import yt_dlp
 from yt_dlp.version import __version__ as youtube_dl_version
 import yt_dlp.utils
-yt_dlp.utils.std_headers['User-Agent'] = ""
+yt_dlp.utils.std_headers['User-Agent'] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
 
 from .version import __version__
 
@@ -41,7 +41,7 @@ def get_videos(url, extra_params):
     }
 
     ydl_params.update(extra_params)
-    yt_dlp.utils.std_headers['User-Agent'] = ""
+    yt_dlp.utils.std_headers['User-Agent'] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
     ydl = SimpleYDL(ydl_params)
     res = ydl.extract_info(url, download=False)
     return res
