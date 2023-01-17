@@ -35,6 +35,7 @@ def get_videos(url, extra_params):
         'no_cache_dir': True,
         'geo_bypass ': True,
         'force_ipv4': True,
+        'verbose': True,
         'user_agent': epString,
         'extractor_args': {'youtube': {'player_client': ['web']}},
         'logger': current_app.logger.getChild('yt_dlp'),
