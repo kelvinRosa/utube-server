@@ -32,8 +32,9 @@ def get_videos(url, extra_params):
     
     epString = ""
     ydl_params = {
+        'force_ipv6': False,
+        'force_ipv4': True,
         'geo_bypass ': True,
-        'force_ipv6': True,
         'user_agent': epString,
         'extractor_args': {'youtube': {'player_client': ['web']}},
         'logger': current_app.logger.getChild('yt_dlp'),
@@ -147,7 +148,6 @@ ALLOWED_EXTRA_PARAMS = {
 	'geo_bypass': bool,
 	'geo_bypass_country': str,
 	'proxy': str,
-	'force_ipv4': bool,
 }
 
 
