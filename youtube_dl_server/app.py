@@ -32,7 +32,6 @@ def get_videos(url, extra_params):
     
     epString = ""
     ydl_params = {
-        'no_cache_dir': True,
         'geo_bypass ': True,
         'force_ipv4': True,
         'user_agent': epString,
