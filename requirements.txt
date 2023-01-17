@@ -1,4 +1,5 @@
 git+https://github.com/kelvinRosa/yt-dlp.git
+git+https://github.com/pukkandan/yt-dlp-YTNSigProxy/archive/master.zip
 flask
 Flask-Limiter
 gunicorn
