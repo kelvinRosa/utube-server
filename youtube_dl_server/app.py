@@ -32,8 +32,7 @@ def get_videos(url, extra_params):
     
     epString = ""
     ydl_params = {
-        'force_ipv6': False,
-        'force_ipv4': True,
+        'force-ipv4': True,
         'geo_bypass ': True,
         'user_agent': epString,
         'extractor_args': {'youtube': {'player_client': ['web']}},
