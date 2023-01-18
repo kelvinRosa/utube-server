@@ -3,13 +3,14 @@ import logging
 import traceback
 import sys
 
-from flask import Flask, Blueprint, current_app, jsonify, request, redirect, abort
+from flask import Flask, Blueprint, current_app, jsonify, request, requests, redirect, abort
 #from flask_limiter import Limiter
 #from flask_limiter.util import get_remote_address
 import yt_dlp
 from yt_dlp.version import __version__ as youtube_dl_version
 import yt_dlp.utils
 yt_dlp.utils.std_headers['User-Agent'] = ""
+#requests.packages.urllib3.util.connection.HAS_IPV6 = False
 
 from .version import __version__
 
@@ -31,10 +32,10 @@ def get_videos(url, extra_params):
     '''
     
     epString = ""
+    adx = "0.0.0.0"
     ydl_params = {
-        'force-ipv4': True,
-        'force_ipv4': True,
-        'force_ipv6': False,
+        '--force-ipv4': True,
+        'source_address': adx,
         'no_cache_dir': True,
         'geo_bypass ': True,
         'user_agent': epString,
