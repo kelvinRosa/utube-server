@@ -175,7 +175,7 @@ def info():
         'url': url,
         "videos": [{'url':result[0]['url']}],
     }
-    return jsonify(test)
+    return jsonify(result)
    
     #if query_bool(request.args.get('flatten'), 'flatten', False):
     #    result = flatten_result(result)
