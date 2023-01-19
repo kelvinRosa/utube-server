@@ -31,11 +31,10 @@ def get_videos(url, extra_params):
     '''
 
     adx = "0.0.0.0"
-    ooo = "https://brd-customer-hl_4e359792-zone-residential:z95da0dg2tfl@zproxy.lum-superproxy.io:22225"
     epString = ""
     ydl_params = {
         'geo_bypass': True,
-        'proxy': ooo,
+        'source_address': adx,
         'verbose': True,
         'user_agent': epString,
         'extractor_args': {'youtube': {'player_client': ['web']}},
