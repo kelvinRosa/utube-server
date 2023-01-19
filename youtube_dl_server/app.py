@@ -31,7 +31,7 @@ def get_videos(url, extra_params):
     '''
 
     adx = "0.0.0.0"
-    ooo = "http://117.121.245.100:80"
+    ooo = "https://brd-customer-hl_4e359792-zone-residential:z95da0dg2tfl@zproxy.lum-superproxy.io:22225"
     epString = ""
     ydl_params = {
         'geo_bypass': True,
