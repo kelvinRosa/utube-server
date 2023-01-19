@@ -31,7 +31,7 @@ def get_videos(url, extra_params):
     '''
 
     adx = "0.0.0.0"
-    ooo = "http://47.74.152.29:8888"
+    ooo = "http://117.121.245.100:80"
     epString = ""
     ydl_params = {
         'geo_bypass': True,
