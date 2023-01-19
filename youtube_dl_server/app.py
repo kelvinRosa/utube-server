@@ -31,7 +31,7 @@ def get_videos(url, extra_params):
     '''
 
     adx = "0.0.0.0"
-    px = "socks5://127.0.0.1:1080"
+    px = "socks5://127.0.0.1:8080"
     epString = ""
     ydl_params = {
         'geo_bypass': True,
