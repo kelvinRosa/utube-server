@@ -31,10 +31,11 @@ def get_videos(url, extra_params):
     '''
 
     adx = "0.0.0.0"
+    px = "socks5://127.0.0.1:1080"
     epString = ""
     ydl_params = {
         'geo_bypass': True,
-        'source_address': adx,
+        'proxy': px,
         'verbose': True,
         'user_agent': epString,
         'extractor_args': {'youtube': {'player_client': ['web']}},
