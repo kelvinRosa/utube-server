@@ -30,7 +30,7 @@ def get_videos(url, extra_params):
     Get a list with dict for every video founded
     '''
 
-    adx = "0.0.0.0"
+    adx = "138.185.23.81"
     epString = ""
     ydl_params = {
         'geo_bypass': True,
@@ -176,7 +176,7 @@ def info():
         'url': url,
         "videos": [{'url':result[0]['url']}],
     }
-    return jsonify(result)
+    return jsonify(test)
    
     #if query_bool(request.args.get('flatten'), 'flatten', False):
     #    result = flatten_result(result)
