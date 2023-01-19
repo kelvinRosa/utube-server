@@ -3,14 +3,13 @@ import logging
 import traceback
 import sys
 
-from flask import Flask, Blueprint, current_app, jsonify, request, requests, redirect, abort
+from flask import Flask, Blueprint, current_app, jsonify, request, redirect, abort
 #from flask_limiter import Limiter
 #from flask_limiter.util import get_remote_address
 import yt_dlp
 from yt_dlp.version import __version__ as youtube_dl_version
 import yt_dlp.utils
 yt_dlp.utils.std_headers['User-Agent'] = ""
-#requests.packages.urllib3.util.connection.HAS_IPV6 = False
 
 from .version import __version__
 
@@ -31,13 +30,13 @@ def get_videos(url, extra_params):
     Get a list with dict for every video founded
     '''
     
-    epString = ""
     adx = "0.0.0.0"
+    epString = ""
     ydl_params = {
-        '--force-ipv4': True,
-        'source_address': adx,
         'no_cache_dir': True,
         'geo_bypass ': True,
+        '--force-ipv4': True,
+        'source_address': adx,
         'user_agent': epString,
         'extractor_args': {'youtube': {'player_client': ['web']}},
         'logger': current_app.logger.getChild('yt_dlp'),
