@@ -30,7 +30,7 @@ def get_videos(url, extra_params):
     Get a list with dict for every video founded
     '''
 
-    adx = "138.185.23.81"
+    adx = "0.0.0.0"
     epString = ""
     ydl_params = {
         'geo_bypass': True,
