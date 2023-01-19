@@ -3,3 +3,7 @@ flask
 Flask-Limiter
 gunicorn
 pycryptodomex
+certifi
+phantomjs
+certifi
+mutagen
