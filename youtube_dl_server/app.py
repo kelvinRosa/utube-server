@@ -35,6 +35,7 @@ def get_videos(url, extra_params):
     ydl_params = {
         'geo_bypass': True,
         'source_address': adx,
+        'cachedir': False,
         'user_agent': epString,
         'extractor_args': {'youtube': {'player_client': ['web']}},
         'logger': current_app.logger.getChild('yt_dlp'),
